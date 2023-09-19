@@ -24,14 +24,16 @@ export async function createImagePage(photoName: string, src: string, aspectRati
             type: 'database_id',
             database_id
         },
+        cover: {
+            type: 'external',
+            external: {
+                url: src
+            }
+        },
         properties: {
             name: {
                 "type": "title",
                 "title": [{ "type": "text", "text": { "content": photoName } }]
-            },
-            src: {
-                'type': 'url',
-                url: src
             },
             aspectRatio: {
                 'type': 'select',
